@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuLich.Models.Fun;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace WebApplication_TinTucDuLich.Controllers
     public class DanhMucTinController : Controller
     {
         // GET: DanhMucTin
-        public ActionResult Index()
-        {
-            return View();
+        public ActionResult Index(long id)
+        {         
+            var model = new DanhMucTinF().DMTin(id);
+            return View(model);
         }
+
     }
 }
