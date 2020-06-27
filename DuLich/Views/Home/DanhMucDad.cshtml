@@ -3,12 +3,11 @@
 {
     <div class="dropdown">
         <li class="nav-item">
-            <a class="nav-link color-green-hover" href="/DanhMucTin/Index">@it.TenDanhMucDad</a>
+            <a class="nav-link color-green-hover" href="/Home/Index">@it.TenDanhMucDad</a>
             <div class="dropdown-child">
-                @{ Html.RenderAction("DanhMuc", "Home", new {id = it.IDDanhMucDad });}
+                @{ Html.RenderAction("DanhMuc", "Home", new { id = it.IDDanhMucDad });}
             </div>
         </li>
     </div>
 }
-
 

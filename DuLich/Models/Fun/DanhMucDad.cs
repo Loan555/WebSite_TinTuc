@@ -22,5 +22,6 @@ namespace DuLich.Models.Fun
             var danhmuc = db.DanhMucDads.Find(id);
             return db.DanhMucs.Where(x => x.IDDanhMucDad == danhmuc.IDDanhMucDad).ToList();
         }
+
     }
 }

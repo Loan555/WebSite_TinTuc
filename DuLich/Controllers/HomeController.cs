@@ -12,7 +12,9 @@ namespace DuLich.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var model = new DanhMucTinF().ListAll();
+            ViewBag.TinMoi = new DanhMucTinF().TinMoi(3);
+            return View(model);
         }
         [ChildActionOnly]
         public PartialViewResult DanhMucDad()
@@ -34,7 +36,9 @@ namespace DuLich.Controllers
         }
         public PartialViewResult TinHot()
         {
-            var model = new DanhMucTinF().TinHot(1);
+            var model = new DanhMucTinF().TinHot(10);
+            ViewBag.Anh = new DanhMucTinF().VN(12);
+            ViewBag.DD = new DanhMucTinF().ListDiaDiemHot(5);
             return PartialView(model);
         }
     }

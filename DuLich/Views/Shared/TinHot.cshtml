@@ -1,4 +1,9 @@
 ﻿@model List<DuLich.Models.EF.BanTin>
+    @using DuLich.Models.EF
+@{ 
+    var anh = (List<DuLich.Models.EF.BanTin>)ViewBag.Anh;
+    var diadiem = (List<DuLich.Models.EF.BanTin>)ViewBag.DD;
+}
 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
     <div class="sidebar">
         <div class="widget">
@@ -35,27 +40,25 @@
             <div class="widget">
                 <h2 class="widget-title">Tự hào Việt Nam</h2>
                 <div class="instagram-wrapper clearfix">
-                    <a href="#"><img src="/forest-time/upload/garden_sq_01.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_02.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_03.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_04.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_05.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_06.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_07.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_08.jpg" alt="" class="img-fluid"></a>
-                    <a href="#"><img src="/forest-time/upload/garden_sq_09.jpg" alt="" class="img-fluid"></a>
+                    @foreach (var item in anh)
+                    {
+                        <a href="/ChiTietBanTin/Index/@item.IDBanTin"><img src="/forest-time/upload/@item.Anh.Anh1" alt="" class="img-fluid"></a>
+                    }
+
+
                 </div><!-- end Instagram wrapper -->
             </div><!-- end widget -->
 
             <div class="widget">
-                <h2 class="widget-title">Popular Categories</h2>
+                <h2 class="widget-title">Nhất định ghé thăm</h2>
                 <div class="link-widget">
                     <ul>
-                        <li><a href="#">Gardening <span>(21)</span></a></li>
-                        <li><a href="#">Outdoor Living <span>(15)</span></a></li>
-                        <li><a href="#">Indoor Living <span>(31)</span></a></li>
-                        <li><a href="#">Shopping Guides <span>(22)</span></a></li>
-                        <li><a href="#">Pool Design <span>(66)</span></a></li>
+                        @foreach (var dd in diadiem)
+                        {
+                            <li><a href="/DanhMucTin/Index/@dd.IDDanhMuc">@dd.ViTri </a></li>
+                        }
+
+
                     </ul>
                 </div><!-- end link-widget -->
             </div><!-- end widget -->
