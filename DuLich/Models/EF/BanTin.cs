@@ -24,13 +24,7 @@ namespace DuLich.Models.EF
         [StringLength(255)]
         public string BanTinNgan { get; set; }
 
-        [Column(TypeName = "text")]
-        public string NoiDung { get; set; }
-
         public DateTime? NgayDang { get; set; }
-
-        [StringLength(32)]
-        public string Anh { get; set; }
 
         public int? SoLuotXem { get; set; }
 
@@ -42,7 +36,15 @@ namespace DuLich.Models.EF
         [StringLength(8)]
         public string Username { get; set; }
 
+        public int? IDAnh { get; set; }
+
+        public int? IDNoiDung { get; set; }
+
+        public virtual Anh Anh { get; set; }
+
         public virtual DanhMuc DanhMuc { get; set; }
+
+        public virtual NoiDung NoiDung { get; set; }
 
         public virtual TableUser TableUser { get; set; }
 
