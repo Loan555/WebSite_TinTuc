@@ -13,6 +13,7 @@ namespace WebApplication_TinTucDuLich.Controllers
         public ActionResult Index(long id)
         {         
             var model = new DanhMucTinF().DMTin(id);
+            ViewBag.Tin = new DanhMucTinF().ChiTietTin(id);
             return View(model);
         }
 

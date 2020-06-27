@@ -26,5 +26,16 @@ namespace DuLich.Controllers
             var model = new DanhMucDadF().ListDanhMuc(id);
             return PartialView(model);
         }
+        [HttpPost]
+        public ActionResult TimKiem(string search)
+        {
+            var model = new DanhMucTinF().TimKiem(search);
+            return View(model);
+        }
+        public PartialViewResult TinHot()
+        {
+            var model = new DanhMucTinF().TinHot(1);
+            return PartialView(model);
+        }
     }
 }

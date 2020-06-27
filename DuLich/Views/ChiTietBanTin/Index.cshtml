@@ -1,6 +1,6 @@
 ﻿@using DuLich.Models.EF
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Bản tin";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
     var tin = (DuLich.Models.EF.BanTin)ViewBag.Tin;
 
@@ -12,12 +12,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2><i class="fa fa-leaf bg-green"></i> Blog</h2>
+                <h2><i class="fa fa-leaf bg-green"></i> Bài viết</h2>
             </div><!-- end col -->
             <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Blog</li>
+                    <li class="breadcrumb-item"><a href="/Home/Index">Trang chủ</a></li>     
+                    <li class="breadcrumb-item"><a href="/DanhMucTin/Index/@tin.DanhMuc.IDDanhMuc">@tin.DanhMuc.TenDanhMuc</a></li>
+                    <li class="breadcrumb-item active">@tin.TieuDe</li>
                 </ol>
             </div><!-- end col -->
         </div><!-- end row -->
@@ -30,7 +31,7 @@
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-title-area">
-                        <span class="color-green"><a href="garden-category.html" title="">Gardening</a></span>
+                        <span class="color-green"><a href="/DanhMucTin/Index/@tin.IDDanhMuc" title="">@tin.ViTri</a></span>
 
                         <h3>@tin.TieuDe</h3>
 

@@ -193,6 +193,9 @@
     <Content Include="forest-time\upload\banner_05.jpg" />
     <Content Include="forest-time\upload\banner_06.jpg" />
     <Content Include="forest-time\upload\banner_07.jpg" />
+    <Content Include="forest-time\upload\chuacau1.jpg" />
+    <Content Include="forest-time\upload\chuacau2.jpg" />
+    <Content Include="forest-time\upload\chuacau3.jpg" />
     <Content Include="forest-time\upload\cta.jpg" />
     <Content Include="forest-time\upload\cta_01.jpg" />
     <Content Include="forest-time\upload\garden_cat_01.jpg" />
@@ -255,6 +258,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DanhMucDad.cshtml" />
     <Content Include="Views\Home\DanhMuc.cshtml" />
+    <Content Include="Views\Home\TimKiem.cshtml" />
+    <Content Include="Views\Shared\TinHot.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

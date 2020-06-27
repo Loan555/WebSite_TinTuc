@@ -1,7 +1,9 @@
 ﻿@model List<DuLich.Models.EF.BanTin>
+@using DuLich.Models.EF
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh mục bản tin";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    var tin = (DuLich.Models.EF.BanTin)ViewBag.Tin;
 }
 
 
@@ -10,13 +12,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2><i class="fa fa-leaf bg-green"></i> Category by: Gardening</h2>
+                <h2><i class="fa fa-leaf bg-green"></i> Cùng khám phá: @tin.ViTri </h2>
             </div><!-- end col -->
             <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                    <li class="breadcrumb-item active">Gardening</li>
+                    <li class="breadcrumb-item"><a href="/Home/Index">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">@tin.DanhMuc.TenDanhMuc</li>
+                    
                 </ol>
             </div><!-- end col -->
         </div><!-- end row -->
@@ -79,14 +81,14 @@
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                 <div class="sidebar">
                     <div class="widget">
-                        <h2 class="widget-title">Search</h2>
-                        <form class="form-inline search-form">
+                        <h2 class="widget-title">Tìm kiếm</h2>
+                        <form class="form-inline search-form" method="post" action="/Home/TimKiem">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search on the site">
+                                <input type="search" name="search" class="form-control" placeholder="Nhập thông tin cần tìm">
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                         </form>
-                    </div><!-- end widget -->
+    <!-- end widget -->
 
                     <div class="widget">
                         <h2 class="widget-title">Recent Posts</h2>
